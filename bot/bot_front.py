@@ -12,7 +12,9 @@ deployment = "gpt-4o"
 
 search_endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
 search_api_key = (os.getenv("AZURE_SEARCH_KEY"))
-search_index  = "index-chatbot-in-a-day"
+search_index  = os.getenv("AZURE_SEARCH_INDEX")
+
+
 def get_completion_from_messages(user_message) -> str:
 
     completion = openai.ChatCompletion.create(
